@@ -1,67 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
 <head>
-<title>Prgrmr</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="print,screen" />
-<link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" media="print,screen" />
-<link rel="stylesheet" type="text/css" href="assets/humane/themes/jackedup.css" media="print,screen" />
-<link rel="stylesheet" type="text/css" href="assets/nvd3/src/nv.d3.css" media="print,screen" />
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin+Sans" media="print,screen" />
-<script type="text/javascript" src="assets/abaaso.min.js"></script>
-<script type="text/javascript" src="assets/modernizr.js"></script>
-<script type="text/javascript" src="assets/moment.min.js"></script>
-<script type="text/javascript" src="assets/spin.min.js"></script>
-<script type="text/javascript" src="assets/humane/humane.js"></script>
-<script type="text/javascript" src="assets/nvd3/lib/d3.v2.min.js"></script>
-<script type="text/javascript" src="assets/nvd3/nv.d3.min.js"></script>
-<script type="text/javascript" src="assets/prgrmr.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Jason Mulligan</title>
+	<meta name="keywords" content="jason mulligan, jason, mulligan, ottawa, ontario, canada, sudbury">
+	<link rel="stylesheet" href="css/foundation.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<script src="js/vendor/custom.modernizr.js"></script>
 </head>
 <body>
 
-<header>
-	<h1>prgrmr</h1>
+<header class="row">
+	<div class="large-12 columns">
+		<h1>Jason Mulligan</h1>
+		<p>I'm specialized in API design, JavaScript (browser &amp; node.js), NoSQL/SQL &amp; REST/HTTP</p>
+	</div>
 </header>
 
-<article>
+<article class="row">
+	<div class="large-12 columns">
+		<div class="large-4 columns">
+			<h3>About</h3>
+			<ul>
+				<li>
+					<strong>Role:</strong> Software Architect
+				</li>
+				<li>
+					<strong>Where:</strong> <a href="http://filetrek.com" data-tooltip class="has-tip" title="FileTrek: Worklog Data &amp; Compliance Reporting of Unstructured Data">FileTrek</a>
+				</li>
+			</ul>
+		</div>
 
-<section id="charts" class="hidden">
-	<div class="chart">
-		<svg id="recent-activities"></svg>
+		<div class="large-4 columns">
+			<h3>Contact</h3>
+			<ul>
+				<li><strong>Tel:</strong> 1-613-852-9803</li>
+				<li><strong>Email:</strong> <a href="mailto:jason.mulligan@avoidwork.com" data-tooltip class="has-tip" title="Send me an email">jason.mulligan@avoidwork.com</a></li>
+			</ul>
+		</div>
+
+		<div class="large-4 columns">
+			<h3>Web</h3>
+			<ul>
+				<li>
+					<strong>GitHub</strong> <a href="https://github.com/avoidwork" data-tooltip class="has-tip" title="My poetry">avoidwork</a>
+				</li>
+				<li>
+					<strong>LinkedIn</strong> <a href="http://www.linkedin.com/in/jasonmulligan" data-tooltip class="has-tip" title="What I'm up to; what I've done">jasonmulligan</a>
+				</li>
+				<li>
+					<strong>Twitter</strong> <a href="http://twitter.com/jasonmulligan" data-tooltip class="has-tip" title="Various thoughts">@jasonmulligan</a>
+				</li>
+				<li>
+					<strong>Tumblr</strong> <a href="http://attack.io" data-tooltip class="has-tip" title="My blog">attack.io</a>
+				</li>
+				<li>
+					<strong>Flickr</strong> <a href="http://www.flickr.com/photos/deviation/" data-tooltip class="has-tip" title="My photography">deviation</a>
+				</li>
+			</ul>
+		</div>
 	</div>
-	<div class="chart">
-		<svg id="repositories"></svg>
-	</div>
-</section>
-
-<div class="col">
-	<section id="events" class="hidden">
-		<h2>Recent Activities</h2>
-	</section>
-</div>
-
-<div class="col">
-	<section id="repos" class="hidden">
-		<h2>Repositories</h2>
-	</section>
-
-	<section id="orgs" class="hidden">
-		<h2>Organizations</h2>
-	</section>
-</div>
-
 </article>
 
-<footer>
-	<ul id="contact"></ul>
-	<p>
-		<strong><a href="https://github.com/avoidwork/prgrmr" title="prgrmr">prgrmr</a></strong> <span id="version"></span>
-	</p>
-</footer>
-
+<script>
+	document.write('<script src=' +
+	('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+	'.js><\/script>')
+</script>
+<script src="js/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+</script>
 </body>
 </html>
