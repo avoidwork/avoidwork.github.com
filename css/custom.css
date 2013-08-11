@@ -10,7 +10,7 @@ body {
   background-size: cover;
 }
 
-a:hover, .has-tip:hover {
+a:active, a:hover, .has-tip:active, .has-tip:hover {
 	color: #CB7E2B;
 }
 
