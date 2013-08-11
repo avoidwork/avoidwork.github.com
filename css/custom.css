@@ -1,3 +1,19 @@
+html, body {
+	min-height: 100%
+}
+
+body { 
+  background: url(http://farm5.staticflickr.com/4064/4694183324_83fbba41a7_b.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+a:hover, .has-tip:hover {
+	color: #CB7E2B;
+}
+
 li {
 	list-style: none;
 }
