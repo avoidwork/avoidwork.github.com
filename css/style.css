@@ -1,0 +1,121 @@
+html,
+body {
+	min-height: 100%;
+}
+
+html {
+	margin: 0 0 0 0;
+}
+
+body {
+	max-width: 60%;
+	margin: 0 auto 0 auto;
+	font-family: 'Arimo', sans-serif;
+	font-size: 18px;
+	background: url(http://farm5.staticflickr.com/4064/4694183324_83fbba41a7_b.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body > * {
+	position: relative;
+}
+
+a {
+	color: #6F6C59;
+}
+
+a:hover {
+	color: #6EA7B8;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+header,
+article,
+section,
+nav,
+footer {
+	margin: 0 0 1em 0;
+}
+
+p {
+	margin: 0 0 2em 0;
+	line-height: 1.5em;
+}
+
+h1 {
+	margin: 1em 0 1em 0;
+	font-size: 2.6em;
+}
+
+header h1 {
+	margin-bottom: 0.4em;
+}
+
+article h1 {
+	font-size: 1.8em;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+nav ul li {
+	display: inline-block;
+	margin: 0 0.4em 0 0.4em;
+}
+
+nav ul li:first-child {
+	margin: 0 0.4em 0 0;
+}
+
+nav ul li:last-child {
+	margin: 0 0 0 0.4em;
+}
+
+code {
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+footer {
+	margin-top: 4em;
+}
+
+.hidden {
+	display: none;
+}
+
+.current {
+	font-weight: bold;
+}
+
+#web strong {
+	width: 100px;
+	display: inline-block;
+}
