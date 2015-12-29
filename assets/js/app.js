@@ -40,9 +40,6 @@
 			html.push(ltpl);
 		});
 
-		// Freeing RAM
-		store.clear();
-
 		// Render on next animation frame (or approximation)
 		render(function () {
 			target.innerHTML = html.join("\n");
