@@ -40,9 +40,6 @@
 			html.push(ltpl);
 		});
 
-		// Freeing RAM
-		store.clear();
-
 		// Render on next animation frame (or approximation)
 		render(function () {
 			target.innerHTML = html.join("\n");
@@ -55,6 +52,8 @@
 
 	// Loading from localStorage, and then updating over the wire
 	store.load("local").then(function () {
+		return store.unload("local");
+	}).then(function () {
 		return store.setUri("https://api.github.com/users/avoidwork/repos?per_page=200", true);
 	}).catch(function () {
 		console.warn("Failed to process GitHub repositories.");
