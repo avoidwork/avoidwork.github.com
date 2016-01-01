@@ -1,6 +1,6 @@
 "use strict";
 
-(function (requestAnimationFrame, haro, adapter) {
+(function (requestAnimationFrame, haro, adapter, keysort) {
 	var target = document.querySelector("section"),
 		tpl = "<h3><a href='{{url}}'>{{name}} ({{stargazers_count}})</a></h3><p>{{description}}</p>",
 		id = "github",
@@ -58,4 +58,4 @@
 	}).catch(function () {
 		console.warn("Failed to process GitHub repositories.");
 	});
-})(requestAnimationFrame, haro, haroLocalStorage);
+})(requestAnimationFrame, haro, haroLocalStorage, keysort);
