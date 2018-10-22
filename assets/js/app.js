@@ -1,61 +1,31 @@
 "use strict";
 
-(function (requestAnimationFrame, haro, adapter, keysort) {
-	var target = document.querySelector("section"),
-		tpl = "<h3><a href='{{url}}'>{{name}} ({{stargazers_count}})</a></h3><p>{{description}}</p>",
-		id = "github",
-		render, store;
+(function (requestAnimationFrame, keysort) {
+	const target = document.querySelector("#target"),
+		invalid = /SurveyMonkey|website|\.com/,
+		render = requestAnimationFrame || function (fn) {
+			setTimeout(fn, 16);
+		};
 
-	render = requestAnimationFrame || function (fn) {
-		setTimeout(fn, 16);
-	};
+	fetch("https://api.github.com/users/avoidwork/repos?per_page=200", {
+		method: "GET",
+		accept: "application/json",
+		credentials: "omit"
+	}).then(res => res.json()).then(data => {
+		const records = keysort(data.filter(i => i.fork === false && invalid.test(i.name) === false && invalid.test(i.description) === false), "stargazers_count desc, name"),
+			html = records.map(i => `
+<div>
+	<h3 class="is-title is-4">
+		<a href="${i.url}" title="${i.name}">${i.name} (${i.stargazers_count})</a>
+	</h3>
+	<h4 class="is-subtitle is-5">
+		${i.description}
+	</h4>
+</div>
+`);
 
-	store = haro(null, {
-		id: id,
-		key: "name",
-		index: ["fork"],
-		versioning: false,
-		adapters: {
-			local: id
-		}
-	});
-
-	// Registering localStorage adapter
-	store.register("local", adapter);
-
-	// Wiring data to UI
-	store.onbatch = function () {
-		var regex = /SurveyMonkey|website|\.com/,
-			html = [],
-			records = store.find({fork: false}, true).filter(function (i) {
-				return !regex.test(i.name) && !regex.test(i.description);
-			});
-
-		keysort(records, "stargazers_count desc, name").forEach(function (i) {
-			var ltpl = tpl.replace("{{name}}", i.name)
-				.replace("{{stargazers_count}}", i.stargazers_count)
-				.replace("{{description}}", i.description)
-				.replace("{{url}}", i.homepage || i.html_url);
-
-			html.push(ltpl);
-		});
-
-		// Render on next animation frame (or approximation)
-		render(function () {
+		render(() => {
 			target.innerHTML = html.join("\n");
-			console.info("Updated UI", records);
-
-			// Freeing RAM
-			html.length = 0;
 		});
-	};
-
-	// Loading from localStorage, and then updating over the wire
-	store.load("local").then(function () {
-		return store.unload("local");
-	}).then(function () {
-		return store.setUri("https://api.github.com/users/avoidwork/repos?per_page=200", true);
-	}).catch(function () {
-		console.warn("Failed to process GitHub repositories.");
-	});
-})(requestAnimationFrame, haro, haroLocalStorage, keysort);
+	}).catch(err => console.warn(err.message));
+}(requestAnimationFrame, keysort));

@@ -1,63 +1,37 @@
-$white: #ffffff;
-$ten: 10px;
-$margin: $ten * 3;
-
 @import url("https://fonts.googleapis.com/css?family=Droid+Sans+Mono");
 
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
 body {
-  min-height: 100%;
-  padding: 0;
-  font-size: $ten;
   font-family: "Droid Sans Mono", Arial, helvetica;
-  margin: 0 auto 0 auto;
-  width: $ten * 46;
+  color: #747570;
 }
 
-article {
-  overflow: auto;
+section.section {
+  min-height: 80%;
+}
 
-  * {
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
+a {
+  color: #00527d;
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    color: #bfbebc;
   }
+}
 
-  h1 {
-    margin: $margin 0 $margin 0;
-  }
-
-  h2 {
-    margin: 0 0 $margin 0;
-  }
-
-  p {
-    margin: 0 0 $margin 0;
-  }
-
-  section {
-    margin-bottom: $margin;
-
-    h3 {
-      margin: 0 0 $ten * 0.2 0;
-    }
-
-    p {
-      margin-bottom: $ten * 2;
-    }
-  }
+.footer {
+  background: #efefef;
 
   a {
-    color: darken($white, 60%);
-
-    &:hover,
-    &:active {
-      color: darken($white, 30%);
+    &:active,
+    &:hover {
+      color: #747570;
     }
+  }
+}
+
+#target {
+  div {
+    margin-bottom: 1rem;
   }
 }
