@@ -16,7 +16,7 @@
 			html = records.map(i => `
 <div>
 	<h3 class="is-title is-4">
-		<a href="${i.url}" title="${i.name}">${i.name} (${i.stargazers_count})</a>
+		<a href="${i.html_url}" title="${i.name}">${i.name} (${i.stargazers_count})</a>
 	</h3>
 	<h4 class="is-subtitle is-5">
 		${i.description}
