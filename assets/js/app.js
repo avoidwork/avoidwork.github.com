@@ -22,10 +22,10 @@
 		${i.description}
 	</h4>
 </div>
-`);
+`).join("\n");
 
 		render(() => {
-			target.innerHTML = html.join("\n");
+			target.innerHTML = html;
 		});
 	}).catch(err => console.warn(err.message));
 }(requestAnimationFrame, keysort));
